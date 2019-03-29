@@ -1,0 +1,26 @@
+{
+  "criteria": [
+    {
+      "fact": "The war started in 1939",
+      "marksAvailable": "1"
+    },
+    {
+      "fact": "The war ended in 1945",
+      "marksAvailable": "1"
+    },
+    {
+      "fact": "Winston Churchil was the leader of United Kingdom",
+      "marksAvailable": "1"
+    },
+    {
+      "fact": "The main powers were: Axis, Alies",
+      "marksAvailable": "2"
+    },
+    {
+      "fact": "Some of the countries that took part in the war were: Poland, Germany, United Kingdom and France",
+      "marksAvailable": "1"
+    }
+  ],
+  "question": "In a few sentences provide 5 facts about the WWII. Remember to include the start and end date and name the 2 main powers.",
+  "overallMarksAvailable": 6
+}
