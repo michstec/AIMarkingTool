@@ -96,6 +96,8 @@ namespace AIMarkingTool
                     }
                 }
 
+                examination.overallMarksAvailable = overallMarksAvailable;
+
                 //reads in the quesiton and pass it to Json object
                 examination.question = txtQuestion.Text;
 

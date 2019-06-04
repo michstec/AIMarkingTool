@@ -71,6 +71,7 @@ namespace AIMarkingTool
                 }
                 if (!this.sentence.matchedCriteriaIndex.Any())
                     this.sentence.matched = false;
+                else this.sentence.matched = true;
                 this.Hide();
                 this.Close();
             }

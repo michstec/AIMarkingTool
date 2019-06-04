@@ -117,16 +117,14 @@ namespace AIMarkingTool
             {
                 btnMarkSelected.Enabled = false;
                 List<string> results = runSemanticSimilarityScriptAndReturnResults();
-                
+
                 if (results != null && results.Any())
                 {
                     parseResultsAndPopulateSentenceList(results);
                     displayAnswerResults();
-                }
-                else
-                    MessageBox.Show("There was nothing to display, please make sure files were not empty.");
 
-                btnMarkSelected.Enabled = true;
+                    btnMarkSelected.Enabled = true;
+                }
             }
         }
 
@@ -136,7 +134,11 @@ namespace AIMarkingTool
             //Getting the PATH Variable for Python Compiler
             string keyName = @"SYSTEM\CurrentControlSet\Control\Session Manager\Environment\";
             string existingPathVariable = (string)Registry.LocalMachine.OpenSubKey(keyName).GetValue("PATH", "", RegistryValueOptions.DoNotExpandEnvironmentNames);
-            if (existingPathVariable[0].Equals(';')) existingPathVariable = existingPathVariable.Remove(0, 1);
+            if (existingPathVariable[0].Equals(';')) existingPathVariable = existingPathVariable.Remove(0, 1); //clears the first semicolon in case there is more than one item in the PATH
+
+            string[] paths = existingPathVariable.Split(';'); 
+            int indexOfSemiColon = existingPathVariable.IndexOf(';');
+            if (indexOfSemiColon != -1) existingPathVariable = existingPathVariable.Substring(0, indexOfSemiColon);
             existingPathVariable += @"\python.exe";
 
             //Creating new Process Info to run the script
